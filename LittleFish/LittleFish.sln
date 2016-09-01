@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleFish.LabSystem", "LittleFish.LabSystem\LittleFish.LabSystem.csproj", "{EB7A60A8-3E26-4078-8F2F-FFA443490200}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LittleFish.LabSystem.Tests", "LittleFish.LabSystem.Tests\LittleFish.LabSystem.Tests.csproj", "{FD8D6AC1-5594-4727-8C5C-10ED8D83DBD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB7A60A8-3E26-4078-8F2F-FFA443490200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7A60A8-3E26-4078-8F2F-FFA443490200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7A60A8-3E26-4078-8F2F-FFA443490200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB7A60A8-3E26-4078-8F2F-FFA443490200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD8D6AC1-5594-4727-8C5C-10ED8D83DBD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8D6AC1-5594-4727-8C5C-10ED8D83DBD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8D6AC1-5594-4727-8C5C-10ED8D83DBD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8D6AC1-5594-4727-8C5C-10ED8D83DBD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
