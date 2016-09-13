@@ -1,41 +1,13 @@
 ﻿@{
 
 }
-
-<div class="easyui-layout" fit="true">
-    <div region="north" style="height:60px">
-        <h3 style="text-align:center">实验室管理系统</h3>
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        @Html.ActionLink("实验室管理系统", "Index", "Home", null, new { @class = "navbar-brand" })
     </div>
-    <div region="west" split="true" title="导航栏" style="width:200px">
-        <ul class="easyui-tree">
-            <li>
-                <span>Folder</span>
-                <ul>
-                    <li>
-                        <span>Sub Folder 1</span>
-                        <ul>
-                            <li><span>File 11</span></li>
-                            <li><span>File 12</span></li>
-                            <li><span>File 13</span></li>
-                        </ul>
-                    </li>
-                    <li><span>File 2</span></li>
-                    <li><span>File 3</span></li>
-                </ul>
-            </li>
-            <li><span>File21</span></li>
+    <div class="pull-right">
+        <ul class="nav navbar-nav pull-right">
+            <li></li>
         </ul>
     </div>
-    <div region="south" title="状态栏" style="height:200px">
-
-    </div>
-    <div region="east" title="快速信息" style="width:200px">
-
-    </div>
-    <div id="content" region="center">
-        <div class="easyui-tabs">
-            <div title="首页"></div>
-            <div title="用户管理"></div>
-        </div>
-    </div>
-</div>
+</nav>
