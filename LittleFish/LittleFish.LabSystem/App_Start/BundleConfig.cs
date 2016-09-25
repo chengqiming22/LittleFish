@@ -14,9 +14,12 @@ namespace LittleFish.LabSystem
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jui").Include(
+                "~/Scripts/jui/js/dwz.min.js",
+                "~/Scripts/jui/js/dwz.regional.zh.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/app-theme.css"));
+                      "~/Content/bootstrap.css"));
         }
     }
 }
