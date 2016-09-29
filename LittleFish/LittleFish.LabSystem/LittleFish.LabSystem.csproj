@@ -43,6 +43,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -50,7 +58,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -371,9 +378,46 @@
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jui\dwz.frag.xml" />
+    <Content Include="Scripts\jui\js\dwz.accordion.js" />
+    <Content Include="Scripts\jui\js\dwz.ajax.js" />
+    <Content Include="Scripts\jui\js\dwz.alertMsg.js" />
+    <Content Include="Scripts\jui\js\dwz.barDrag.js" />
+    <Content Include="Scripts\jui\js\dwz.checkbox.js" />
+    <Content Include="Scripts\jui\js\dwz.combox.js" />
+    <Content Include="Scripts\jui\js\dwz.contextmenu.js" />
+    <Content Include="Scripts\jui\js\dwz.core.js" />
+    <Content Include="Scripts\jui\js\dwz.cssTable.js" />
+    <Content Include="Scripts\jui\js\dwz.database.js" />
+    <Content Include="Scripts\jui\js\dwz.datepicker.js" />
+    <Content Include="Scripts\jui\js\dwz.dialog.js" />
+    <Content Include="Scripts\jui\js\dwz.dialogDrag.js" />
+    <Content Include="Scripts\jui\js\dwz.drag.js" />
+    <Content Include="Scripts\jui\js\dwz.effects.js" />
+    <Content Include="Scripts\jui\js\dwz.file.js" />
+    <Content Include="Scripts\jui\js\dwz.history.js" />
     <Content Include="Scripts\jui\js\dwz.min.js" />
+    <Content Include="Scripts\jui\js\dwz.navTab.js" />
+    <Content Include="Scripts\jui\js\dwz.pagination.js" />
+    <Content Include="Scripts\jui\js\dwz.panel.js" />
+    <Content Include="Scripts\jui\js\dwz.print.js" />
     <Content Include="Scripts\jui\js\dwz.regional.zh.js" />
+    <Content Include="Scripts\jui\js\dwz.resize.js" />
+    <Content Include="Scripts\jui\js\dwz.scrollCenter.js" />
+    <Content Include="Scripts\jui\js\dwz.sortDrag.js" />
+    <Content Include="Scripts\jui\js\dwz.stable.js" />
+    <Content Include="Scripts\jui\js\dwz.switchEnv.js" />
+    <Content Include="Scripts\jui\js\dwz.tab.js" />
+    <Content Include="Scripts\jui\js\dwz.taskBar.js" />
+    <Content Include="Scripts\jui\js\dwz.theme.js" />
+    <Content Include="Scripts\jui\js\dwz.tree.js" />
+    <Content Include="Scripts\jui\js\dwz.ui.js" />
+    <Content Include="Scripts\jui\js\dwz.util.date.js" />
+    <Content Include="Scripts\jui\js\dwz.util.number.js" />
+    <Content Include="Scripts\jui\js\dwz.validate.method.js" />
     <Content Include="Scripts\jui\themes\azure\images\accordion\accordion.png" />
     <Content Include="Scripts\jui\themes\azure\images\account_info_bg.png" />
     <Content Include="Scripts\jui\themes\azure\images\alert\alertpanel.png" />
@@ -633,9 +677,17 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
-    <Content Include="Views\Lab\LabInfo.cshtml" />
+    <Content Include="Views\Lab\LabList.cshtml" />
+    <Content Include="Views\Lab\Regulations.cshtml" />
+    <Content Include="Views\Lab\LabAppointment.cshtml" />
+    <Content Include="Views\Lab\EditLab.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\LittleFish.LabSystem.DataModel\LittleFish.LabSystem.DataModel.csproj">
+      <Project>{9f41d9b0-639a-4319-8452-76c2c39e436e}</Project>
+      <Name>LittleFish.LabSystem.DataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

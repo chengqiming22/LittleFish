@@ -1,4 +1,6 @@
-﻿@{
+﻿@using LittleFish.LabSystem.DataModel.Entities
+@model List<Resource>
+@{
 
 }
 @section scripts{
@@ -32,66 +34,22 @@
             <div id="sidebar">
                 <div class="toggleCollapse"><h2>主菜单</h2><div>收缩</div></div>
                 <div class="accordion" fillspace="sidebar">
-                    <div class="accordionHeader">
-                        <h2><span>Folder</span>实验室中心</h2>
-                    </div>
-                    <div class="accordionContent">
-                        <ul class="tree treeFolder">
-                            <li>
-                                @Html.ActionLink("实验室信息", "LabInfo", "Lab", null, new { target="navTab",rel="LabInfo"})
-                                <a href="#">规章守则</a>
-                                <a href="#">实验室预约</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="accordionHeader">
-                        <h2><span>Folder</span>仪器设备中心</h2>
-                    </div>
-                    <div class="accordionContent">
-                        <ul class="tree treeFolder">
-                            <li>
-                                <a href="#">仪器设备分类</a>
-                                <a href="#">仪器设备清单</a>
-                                <a href="#">入库</a>
-                                <a href="#">出库</a>
-                                <a href="#">使用记录</a>
-                                <a href="#">保养中心</a>
-                                <a href="#">维修中心</a>
-                                <a href="#">仪器设备标定</a>
-                                <a href="#">报废申请</a>
-                                <a href="#">借用申请</a>
-                                <a href="#">购入申请</a>
-                            </li>
-                        </ul>
-                    </div><div class="accordionHeader">
-                        <h2><span>Folder</span>耗材中心</h2>
-                    </div>
-                    <div class="accordionContent">
-                        <ul class="tree treeFolder">
-                            <li>
-                                <a href="#">耗材分类</a>
-                                <a href="#">耗材清单</a>
-                                <a href="#">入库</a>
-                                <a href="#">出库</a>
-                                <a href="#">购入申请</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="accordionHeader">
-                        <h2><span>Folder</span>系统设置</h2>
-                    </div>
-                    <div class="accordionContent">
-                        <ul class="tree treeFolder">
-                            <li>
-                                <a href="#">个人中心</a>
-                                <a href="#">新用户注册</a>
-                                <a href="#">用户管理</a>
-                                <a href="#">系统日志</a>
-                                <a href="#">邮件设置</a>
-                                <a href="#">用户反馈信息</a>
-                            </li>
-                        </ul>
-                    </div>
+                    @foreach (var cat in Model.GroupBy(r => r.Category))
+                    {
+                        <div class="accordionHeader">
+                            <h2><span>Folder</span>@cat.Key.DisplayName</h2>
+                        </div>
+                        <div class="accordionContent">
+                            <ul class="tree treeFolder">
+                                <li>
+                                    @foreach (var res in cat)
+                                    {
+                                        @Html.ActionLink(res.DisplayName, res.Name, cat.Key.Name, null, new { target = "navTab", rel = res.Name })
+                                    }
+                                </li>
+                            </ul>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
@@ -103,12 +61,17 @@
                             <li tabid="main" class="main"><a href="javascript:;"><span><span class="home_icon">我的主页</span></span></a></li>
                         </ul>
                     </div>
+                    <div class="tabsLeft">left</div><!-- 禁用只需要添加一个样式 class="tabsLeft tabsLeftDisabled" -->
+                    <div class="tabsRight">right</div><!-- 禁用只需要添加一个样式 class="tabsRight tabsRightDisabled" -->
+                    <div class="tabsMore">more</div>
                 </div>
                 <ul class="tabsMoreList">
                     <li><a href="javascript:;">我的主页</a></li>
                 </ul>
                 <div class="navTab-panel tabsPageContent layoutBox">
+                    <div class="page unitBox">
 
+                    </div>
                 </div>
             </div>
         </div>

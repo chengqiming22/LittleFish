@@ -1,0 +1,46 @@
+﻿@using LittleFish.LabSystem.DataModel.Entities
+@model List<Laboratory>
+@{
+    Layout = null;
+}
+<div class="pageHeader">
+    @using (Html.BeginForm("LabList", "Lab", FormMethod.Post, new { onsubmit = "return validateCallback(this,navTabAjaxDone)" }))
+    {
+        <table>
+            <tr>
+                <td><input type="text" placeholder="输入查询关键字" /></td>
+                <td><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></td>
+            </tr>
+        </table>
+    }
+</div>
+<div class="pageContent">
+    <div class="panelBar">
+        <ul class="toolBar">
+            <li><a href="@Url.Action("EditLab")" class="add" target="navTab" title="添加实验室"><span>添加</span></a></li>
+            <li><a href="@Url.Action("DeleteLab", new { id="{labId}"})" class="delete" target="ajaxTodo" title="确定要删除吗？" fresh="true"><span>删除</span></a></li>
+            <li><a href="@Url.Action("EditLab", new { id="{labId}"})" class="edit" target="navTab" title="编辑实验室"><span>修改</span></a></li>
+        </ul>
+    </div>
+    <table class="table" style="width:100%">
+        <thead>
+            <tr>
+                <th width="120px">名称</th>
+                <th width="250px">位置</th>
+                <th width="100px">建档日期</th>
+                <th width="200px">备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lab in Model)
+            {
+                <tr target="labId" rel="@lab.Id">
+                    <td>@lab.Name</td>
+                    <td>@lab.Location</td>
+                    <td>@lab.ArchiveDate.ToString("yyyy年MM月dd日")</td>
+                    <td>@lab.Notes</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

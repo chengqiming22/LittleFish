@@ -1,0 +1,35 @@
+﻿@using LittleFish.LabSystem.DataModel.Entities
+@model Laboratory
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("SaveLab", "Lab", FormMethod.Post, new { onsubmit = "return validateCallback(this,navTabAjaxDone)" }))
+{
+    <div class="pageFormContent" layouth="56">
+        @Html.HiddenFor(m => m.Id)
+        <p>
+            @Html.LabelFor(m => m.Name, "实验室名称")
+            @Html.TextBoxFor(m => m.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Location, "位置")
+            @Html.TextBoxFor(m => m.Location)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ArchiveDate, "建档日期")
+            @Html.TextBox("ArchiveDate", DateTime.Today.ToLongDateString(), new { @readonly = "readonly" })
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Notes, "备注")
+            @Html.TextAreaFor(m => m.Notes)
+        </p>
+    </div>
+    <div class="formBar">
+        <ul>
+            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+            <li>
+                <div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+            </li>
+        </ul>
+    </div>
+}

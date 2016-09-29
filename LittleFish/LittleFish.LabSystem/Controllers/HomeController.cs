@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LittleFish.LabSystem.DataModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,10 @@ namespace LittleFish.LabSystem.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            using (var db = new LabDbContext())
+            {
+                return View(db.Resources.Include("Category").ToList());
+            }
         }
     }
 }
