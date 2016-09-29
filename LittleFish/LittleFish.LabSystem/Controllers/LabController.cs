@@ -22,6 +22,17 @@ namespace LittleFish.LabSystem.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult LabList(string keyword)
+        {
+            using (var db = new LabDbContext())
+            {
+                var list = string.IsNullOrWhiteSpace(keyword) ? db.Labs.ToList() :
+                   db.Labs.Where(l => l.Name.Contains(keyword) || l.Location.Contains(keyword) || l.Notes.Contains(keyword)).ToList();
+                return View(list);
+            }
+        }
+
         public ActionResult EditLab(int? id)
         {
             using (var db = new LabDbContext())
